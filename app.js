@@ -36,7 +36,7 @@ async function main() {
 
     // await findOneListingByName(client, "Mango");
 
-    // await findMultipleListingByName(client, quantityOfListing = 15);
+    await findMultipleListingByName(client, quantityOfListing = 5);
 
     // await updateListingByName(client, "Mango", {name: "Coconut", quantity: 30, Name: "Brown"});
 
@@ -44,7 +44,7 @@ async function main() {
 
     // await deleteListingByName(client, "Red");
 
-    await deleteMultipleListingsByName(client, 10)
+    // await deleteMultipleListingsByName(client, 10)
 
   } catch(e) {
     console.error(e);
@@ -87,7 +87,7 @@ async function updateListingByName(client, nameOfListing, updatedListing) {
 }
 
 async function findMultipleListingByName(client, quantityOfListing) {
-  const result = client.db("newListings").collection("NamesOfFruits").find({quantity: {$gt: quantityOfListing}}).sort({quantity: 1});
+  const result = client.db("newLiistings").collection("NamesOfFruits").find({quantity: {$gt: quantityOfListing}}).sort({quantity: 1});
    // the findMultipleListingByName async function is to read documents for multiple objects because it has the find method
 
   if(result) {
